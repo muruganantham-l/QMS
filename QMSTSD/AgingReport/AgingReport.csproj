@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +38,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -67,13 +71,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Focus.js" />
     <Content Include="GridView.js" />
-    <Content Include="App_Data\KKKP.rsd" />
-    <Content Include="App_Data\Report1.rdl" />
-    <Content Include="App_Data\Report2.rdl" />
-    <Content Include="App_Data\Scorecard-TSD.rdl" />
-    <Content Include="App_Data\Scorecard.rsd" />
-    <Content Include="App_Data\Today.rsd" />
-    <Content Include="App_Data\Tommsprod.rds" />
     <None Include="jquery-1.8.2.intellisense.js" />
     <Content Include="IndexPage.aspx" />
     <Content Include="jquery-1.8.2.js" />
@@ -232,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scorecard-TSD.rdl" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,7 +240,9 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

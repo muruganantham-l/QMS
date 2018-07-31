@@ -58,6 +58,11 @@ namespace AgingReport
                       //  DropDownDocType.Items.Insert(0, new ListItem("PPM CHECKLIST", "2"));//commented by muruganantham
                         DropDownDocType.Items.Insert(0, new ListItem("--Select--", "0"));
 
+                         freq_DropDownList1.Items.Insert(0, new ListItem("--Select--", "0"));
+                        freq_DropDownList1.Items.Insert(1, new ListItem("1", "1"));
+                        freq_DropDownList1.Items.Insert(2, new ListItem("2", "2"));
+
+
 
                         string com1 = "WITH Years(No , Year) AS  ( SELECT 1, 2013 year UNION ALL  SELECT No+1,year+1 FROM  Years AS d  where   Year < Year(getdate())) SELECT No , Year FROM Years order by year desc";
 
@@ -145,6 +150,13 @@ namespace AgingReport
             string DocumentType = DropDownDocType.SelectedItem.Text;
             string District     = DropDownDistrict.SelectedItem.Text;
             string State        = DropDownState.SelectedItem.Text;
+            //added by muruganantham
+
+            string BeNumValid = Isbenumbervalid();
+
+            //Response.Write(BeNumValid);
+
+            //Isbenumbervalid
 
             string path =  year + "/" + State + "/" + District + "/" + DocumentType;
 
@@ -158,6 +170,27 @@ namespace AgingReport
 
             if (year != "--Select--")
             {
+
+                            if (BeNumValid == "false")
+                            {
+                                // Response.Write(BeNumValid);
+
+
+                                Label5.ForeColor = System.Drawing.Color.Red;
+                                Label5.Visible = true;
+                                Label5.Text = " Please enter valid BE Number";
+                                return;
+                            }
+
+                            if (freq_DropDownList1.SelectedItem.Text == "--Select--")
+                            {
+                                Label5.ForeColor = System.Drawing.Color.Red;
+                                Label5.Visible = true;
+                                Label5.Text = " Please select Frequency";
+                                return;
+                            }
+                          
+
 
             if (Files.HasFile)
                 {
@@ -215,10 +248,16 @@ namespace AgingReport
 
                             if (isValidFile)
                             {
-                                string csvPath = Server.MapPath("~/App_Data/" + path) + "/" + Path.GetFileName(Files.PostedFiles[i].FileName);
+                                            string csvPath = Server.MapPath("~/App_Data/" + path) + "/" + benumber_txtbox.Text+'_'+freq_DropDownList1.SelectedValue+'.'+ extension;
+                                                //Path.GetFileName(Files.PostedFiles[i].FileName);//commented by muruganantham
                                 Files.PostedFiles[i].SaveAs(csvPath);
 
-                                SqlCommand cmd = new SqlCommand("insert into Doc_upload_detail (Year,DocumentType,State,District,Filename,Folder,Uploadedby,filetype) Select '" + year + "','" + DocumentType + "','" + State + "','" + District + "','" + filenames + "','" + path + "/" + filenames + "','" + test + "','" + extension + "'", con);
+                                            filenames = benumber_txtbox.Text;//added by muruganantham
+
+                                          //  Response.Write(virtualpath);
+
+                                SqlCommand cmd = new SqlCommand("insert into Doc_upload_detail (Year,DocumentType,State,District,Filename,Folder,Uploadedby,filetype) " +
+                                    "Select '" + year + "','" + DocumentType + "','" + State + "','" + District + "','" + filenames + "','" + path + "/" + filenames + "','" + test + "','" + extension + "'", con);
                                 cmd.CommandTimeout = 1000;
                                 cmd.ExecuteNonQuery();
 
@@ -300,6 +339,43 @@ namespace AgingReport
         protected void DropDownDocType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Label5.Text = ""; 
+        }
+
+        protected string Isbenumbervalid()
+        {
+
+            string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand();
+            object returnValue;
+
+            cmd.CommandText = "select count(1) from ast_mst where ast_mst_asset_no=@ast_no";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@ast_no", benumber_txtbox.Text);
+            cmd.Connection = con;
+
+            con.Open();
+            returnValue = cmd.ExecuteScalar();
+            con.Close();
+
+            if (Convert.ToInt16(returnValue) > 0)
+            {
+
+                return "true";
+                //Label5.ForeColor = System.Drawing.Color.Red;
+                //Label5.Visible = false;
+                //    Label5.Text = "Please enter valid BE Number";
+
+            }
+            //Response.Write("Correct");
+            else
+            {
+                //Label5.ForeColor = System.Drawing.Color.Red;
+                //Label5.Visible = true;
+                //Label5.Text = "Please enter valid BE Number";
+                return "false";
+
+            }
         }
     }
 }
