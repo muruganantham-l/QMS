@@ -1,0 +1,5 @@
+sql server
+110.74.145.212
+tommsadm
+/
+tommsadm

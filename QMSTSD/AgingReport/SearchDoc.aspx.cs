@@ -51,9 +51,10 @@ namespace AgingReport
 
                         DropDownDistrict.Items.Insert(0, new ListItem("--Select--", "0"));
 
-
-                        DropDownDocType.Items.Insert(0, new ListItem("PPM B03", "1"));
-                        DropDownDocType.Items.Insert(0, new ListItem("PPM CHECKLIST", "2"));
+                        DropDownDocType.Items.Insert(0, new ListItem("PPM B03 & CHECKLIST", "1"));
+                       
+                        //DropDownDocType.Items.Insert(0, new ListItem("PPM B03", "1"));
+                        //DropDownDocType.Items.Insert(0, new ListItem("PPM CHECKLIST", "2"));
                         DropDownDocType.Items.Insert(0, new ListItem("--Select--", "0"));
 
 
@@ -68,6 +69,13 @@ namespace AgingReport
                         DropDownYear.DataValueField = "No";
                         DropDownYear.DataBind();
                         DropDownYear.Items.Insert(0, new ListItem("--Select--", "0"));
+
+                        //added by muruganantham
+
+                        freq_DropDownList1.Items.Insert(0, new ListItem("--Select--", "0"));
+                        freq_DropDownList1.Items.Insert(1, new ListItem("1", "1"));
+                        freq_DropDownList1.Items.Insert(2, new ListItem("2", "2"));
+
 
                     }
                     catch (Exception ex)
@@ -86,10 +94,58 @@ namespace AgingReport
                 }
             }
         }
+        protected string Isbenumbervalid()
+        {
 
+            string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand();
+            object returnValue;
+
+            cmd.CommandText = "select count(1) from ast_mst where ast_mst_asset_no=@ast_no";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@ast_no", Textbox1.Text);
+            cmd.Connection = con;
+
+            con.Open();
+            returnValue = cmd.ExecuteScalar();
+            con.Close();
+
+            if (Convert.ToInt16(returnValue) > 0)
+            {
+
+                return "true";
+                //Label5.ForeColor = System.Drawing.Color.Red;
+                //Label5.Visible = false;
+                //    Label5.Text = "Please enter valid BE Number";
+
+            }
+            //Response.Write("Correct");
+            else
+            {
+                //Label5.ForeColor = System.Drawing.Color.Red;
+                //Label5.Visible = true;
+                //Label5.Text = "Please enter valid BE Number";
+                return "false";
+
+            }
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+            string BeNumValid = Isbenumbervalid();
+            if (BeNumValid == "false")
+            {
+                // Response.Write(BeNumValid);
+
+
+                Label5.ForeColor = System.Drawing.Color.Red;
+                Label5.Visible = true;
+                Label5.Text = " Please enter valid BE Number";
+                return;
+            }
+            else {
+                Label5.Visible = false;
+            }
             string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             SqlConnection con = null;
 
@@ -99,7 +155,7 @@ namespace AgingReport
 
                         SqlDataAdapter adp = new SqlDataAdapter("Exec Sp_Search_Document_proc '"+DropDownState.SelectedItem.Text+"','"+
                             DropDownDistrict.SelectedItem.Text+"','"+DropDownDocType.SelectedItem.Text+"','"+DropDownYear.SelectedItem.Text
-                            +"','"+Textbox1.Text+"'", con);
+                            +"','"+Textbox1.Text + "','"+freq_DropDownList1.SelectedItem.Text+"'", con);
                         
                         con.Open();
 

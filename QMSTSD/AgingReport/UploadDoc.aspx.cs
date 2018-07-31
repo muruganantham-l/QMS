@@ -252,7 +252,7 @@ namespace AgingReport
                                                 //Path.GetFileName(Files.PostedFiles[i].FileName);//commented by muruganantham
                                 Files.PostedFiles[i].SaveAs(csvPath);
 
-                                            filenames = benumber_txtbox.Text;//added by muruganantham
+                                            filenames = benumber_txtbox.Text+"_"+ freq_DropDownList1.SelectedValue;//added by muruganantham
 
                                           //  Response.Write(virtualpath);
 

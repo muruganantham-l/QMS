@@ -45,8 +45,17 @@
             <asp:DropDownList ID="DropDownYear" runat="server" Visible="true" AutoPostBack="true" BackColor="White" DataTextField="Year" DataValueField="No" Width="200" Height="25" OnSelectedIndexChanged="DropDownYear_SelectedIndexChanged"></asp:DropDownList>
             <br />
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Document Name:*" Font-Names="Calibri" Font-Bold="True" Width="150px" Height="25px"></asp:Label>
-            <asp:TextBox ID="Textbox1" runat="server" Width="200" Height="20" ></asp:TextBox><br />
+            <asp:Label ID="Label16" runat="server" Text="BE Number :*" Font-Names="Calibri" Font-Bold="True" Width="150px" Height="25px"></asp:Label>
+            <asp:TextBox ID="Textbox1" Width="200" runat="server"></asp:TextBox>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <asp:Label ID="Label17" runat="server" Text="Frequency :*" Font-Names="Calibri" Font-Bold="True" Width="150px" Height="25px"></asp:Label>
+              <asp:DropDownList ID="freq_DropDownList1" runat="server" Visible="true" AutoPostBack="true" BackColor="White" DataTextField="Year" DataValueField="No" Width="200" Height="25" ></asp:DropDownList>
+          
+           <br />
+            <br />
+            
+
+            <asp:Label ID="Label5" runat="server" Font-Names="Calibri"  Text="Label" Visible="false"></asp:Label>
             <br />
              <br />
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
