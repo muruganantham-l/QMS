@@ -3,64 +3,44 @@
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <DataSources>
     <ProjectItem>
-      <Name>Tommsprod.rds</Name>
-      <FullPath>Tommsprod.rds</FullPath>
+      <Name>TOMMSPROD.rds</Name>
+      <FullPath>TOMMSPROD.rds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSets>
     <ProjectItem>
-      <Name>AGMWISE.rsd</Name>
-      <FullPath>AGMWISE.rsd</FullPath>
+      <Name>DATASET.rsd</Name>
+      <FullPath>DATASET.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>KKKP.rsd</Name>
-      <FullPath>KKKP.rsd</FullPath>
+      <Name>DATASET2.rsd</Name>
+      <FullPath>DATASET2.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Scorecard.rsd</Name>
-      <FullPath>Scorecard.rsd</FullPath>
+      <Name>Summary.rsd</Name>
+      <FullPath>Summary.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Today.rsd</Name>
-      <FullPath>Today.rsd</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>ZoneWise.rsd</Name>
-      <FullPath>ZoneWise.rsd</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Equipment Maintenance Status Dataset.rsd</Name>
-      <FullPath>Equipment Maintenance Status Dataset.rsd</FullPath>
+      <Name>Fin08A.rsd</Name>
+      <FullPath>Fin08A.rsd</FullPath>
     </ProjectItem>
   </DataSets>
   <Reports>
     <ProjectItem>
-      <Name>Agmwise.rdl</Name>
-      <FullPath>Agmwise.rdl</FullPath>
+      <Name>BillingNBE.rdl</Name>
+      <FullPath>BillingNBE.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dashboard1.rdl</Name>
-      <FullPath>Dashboard1.rdl</FullPath>
+      <Name>BillingPBE.rdl</Name>
+      <FullPath>BillingPBE.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Report1.rdl</Name>
-      <FullPath>Report1.rdl</FullPath>
+      <Name>Summary.rdl</Name>
+      <FullPath>Summary.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Report2.rdl</Name>
-      <FullPath>Report2.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Scorecard-TSD.rdl</Name>
-      <FullPath>Scorecard-TSD.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Zonwise.rdl</Name>
-      <FullPath>Zonwise.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>EquipmentMaintenanceStatus.rdl</Name>
-      <FullPath>EquipmentMaintenanceStatus.rdl</FullPath>
+      <Name>Fin08-A.rdl</Name>
+      <FullPath>Fin08-A.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
@@ -70,14 +50,14 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://localhost/ReportServer</TargetServerURL>
-        <TargetFolder>ReportSSRS</TargetFolder>
+        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+        <TargetFolder>Report Project1</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <OverwriteDataSources>true</OverwriteDataSources>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
         <OverwriteDatasets>true</OverwriteDatasets>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
-        <StartItem>Scorecard.rdl</StartItem>
+        <StartItem>BillingNBE.rdl</StartItem>
       </Options>
     </Configuration>
     <Configuration>
@@ -86,7 +66,7 @@
       <Options>
         <OutputPath>bin\DebugLocal</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>ReportSSRS</TargetFolder>
+        <TargetFolder>Report Project1</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
@@ -98,7 +78,7 @@
       <Options>
         <OutputPath>bin\Release</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetFolder>ReportSSRS</TargetFolder>
+        <TargetFolder>Report Project1</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <TargetDatasetFolder>Datasets</TargetDatasetFolder>
         <TargetReportPartFolder>Report Parts</TargetReportPartFolder>
