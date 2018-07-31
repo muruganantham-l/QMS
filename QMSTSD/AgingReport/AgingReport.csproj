@@ -68,6 +68,7 @@
     <Content Include="AgingReport.aspx" />
     <Content Include="CWODownload.aspx" />
     <Content Include="DetailsView.js" />
+    <Content Include="EquipmentMaintananceStatusReport.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Focus.js" />
     <Content Include="GridView.js" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="CWODownload.aspx.designer.cs">
       <DependentUpon>CWODownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentMaintananceStatusReport.aspx.cs">
+      <DependentUpon>EquipmentMaintananceStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EquipmentMaintananceStatusReport.aspx.designer.cs">
+      <DependentUpon>EquipmentMaintananceStatusReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Impersonator.cs" />
     <Compile Include="IndexPage.aspx.cs">

@@ -1,9 +1,10 @@
-create Procedure Sp_Search_Document_proc 
+alter Procedure Sp_Search_Document_proc 
 @State varchar(100) ,
 @District varchar (100),
 @DocType varchar(100),
 @Year  Varchar(100),
-@Benumber  Varchar(100)
+@Benumber  Varchar(100),
+@freq  Varchar(100)
 as
 begin
 
@@ -42,7 +43,7 @@ where  State like @State
 and  District like @District
 and DocumentType like @DocType
 and Year like @Year
-and Filename like @Benumber
+and Filename like @Benumber+'_'+@freq
 
 end
 
