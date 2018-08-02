@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>TOMMSPROD</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>d64aa250-c909-4724-acdc-e3f410ed1fcc</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <SharedDataSet>
+        <SharedDataSetReference>equip_maintain_status</SharedDataSetReference>
+        <QueryParameters>
+          <QueryParameter Name="@be_category">
+            <Value>=Parameters!be_category.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@war_start_date">
+            <Value>=Parameters!war_start_date.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@manufacture">
+            <Value>=Parameters!manufacture.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@war_end_date">
+            <Value>=Parameters!war_end_date.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@model">
+            <Value>=Parameters!model.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@batch">
+            <Value>=Parameters!batch.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </SharedDataSet>
+      <Fields>
+        <Field Name="be_category">
+          <DataField>be_category</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="date">
+          <DataField>date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="manufacture">
+          <DataField>manufacture</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="model">
+          <DataField>model</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="batch">
+          <DataField>batch</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="suppliername">
+          <DataField>suppliername</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="state">
+          <DataField>state</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="total_wo">
+          <DataField>total_wo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wo_completed_within_kpi">
+          <DataField>wo_completed_within_kpi</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wo_completed_out_of_kpi">
+          <DataField>wo_completed_out_of_kpi</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wo_pending">
+          <DataField>wo_pending</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="total_pen_amt">
+          <DataField>total_pen_amt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Equipment Maintenance Status Report</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0.28787cm</Top>
+            <Left>1.08162cm</Left>
+            <Height>0.6cm</Height>
+            <Width>19.51271cm</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="be_category">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!be_category.Value, "DataSet1")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>be_category</rd:DefaultName>
+            <Top>2.43099cm</Top>
+            <Left>2.08703cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.5cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>8.47917in</Width>
+      <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="be_category">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>be category</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="war_start_date">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>war start date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="manufacture">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>manufacture</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="war_end_date">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>war end date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="model">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>model</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="batch">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>batch</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>6f89e49d-7a4a-4f2e-bca0-8dc3a5adf6ef</rd:ReportID>
+</Report>

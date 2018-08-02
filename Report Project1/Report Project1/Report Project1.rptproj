@@ -17,12 +17,16 @@
       <FullPath>DATASET2.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Fin08A.rsd</Name>
+      <FullPath>Fin08A.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Summary.rsd</Name>
       <FullPath>Summary.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Fin08A.rsd</Name>
-      <FullPath>Fin08A.rsd</FullPath>
+      <Name>equip_maintain_status.rsd</Name>
+      <FullPath>equip_maintain_status.rsd</FullPath>
     </ProjectItem>
   </DataSets>
   <Reports>
@@ -35,12 +39,16 @@
       <FullPath>BillingPBE.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Fin08-A.rdl</Name>
+      <FullPath>Fin08-A.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Summary.rdl</Name>
       <FullPath>Summary.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Fin08-A.rdl</Name>
-      <FullPath>Fin08-A.rdl</FullPath>
+      <Name>equipment_maintanance_status_report.rdl</Name>
+      <FullPath>equipment_maintanance_status_report.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
