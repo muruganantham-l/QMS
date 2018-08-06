@@ -8,12 +8,14 @@ using Microsoft.Reporting.WebForms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 namespace AgingReport
 {
     public partial class EquipmentMaintananceStatusReport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           // warenty_start_txt.Text = "11/11/2018";
             if (!IsPostBack)
             {
                 if (Session["name"] == null)
@@ -29,7 +31,7 @@ namespace AgingReport
 
                     string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
                     SqlConnection con = null;
-
+                   
                     try
                     {
                         con = new SqlConnection(connString);
@@ -56,8 +58,8 @@ namespace AgingReport
                         //DropDownCliniccat.Items.Insert(0, new ListItem("CHAIRS, EXAMINATION/TREATMENT, DENTISTRY, SPECIALIST", "2"));
                         //DropDownCliniccat.Items.Insert(0, new ListItem("Chairs, Examination/Treatment, Dentistry", "3"));
                         //DropDownCliniccat.Items.Insert(0, new ListItem("ALL", "0"));
-                        MyReportViewer.ProcessingMode = ProcessingMode.Remote;
-                        // MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
+                       // MyReportViewer.ProcessingMode = ProcessingMode.Remote;
+                       // MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
                         MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
                         MyReportViewer.ServerReport.ReportPath = "/Report Project1/EquipMainStatusRpt";
                         MyReportViewer.ServerReport.Refresh();
@@ -262,8 +264,10 @@ namespace AgingReport
 
         protected void DropDownmodel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            warenty_start_txt.Text = null;
-             warenty_end_txt.Text =null;
+
+            //  Response.Write("test");
+            warenty_start_txt.Text = null;// "2018-01-01";// "01/01/2018";// "2018-01-01";
+            warenty_end_txt.Text = null;// "2018-01-01";
             string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             SqlConnection con1 = null;
 
@@ -275,17 +279,27 @@ namespace AgingReport
                 DataTable dt = new DataTable();
             con1.Open();
             SqlDataReader myReader = null;
-            SqlCommand myCommand = new SqlCommand("select top 1 cast(ast_det_datetime1 as date) ast_det_datetime1,cast(ast_det_warranty_date as date) ast_det_warranty_date	from ast_det b (nolock)	where ast_det_varchar21 is not null 	and ast_det_varchar21 != 'NA'    and ast_det_varchar21 ='" + DropDownbatch.SelectedItem.Text + "' 	AND ast_det_varchar16 = '" + DropDownSuppliername.SelectedItem.Text + "'and ast_det_modelno = '" + DropDownmodel.SelectedItem.Text + "' and exists (	select '' from ast_mst a (nolock)	where a.RowID = b.mst_RowID and a.ast_mst_asset_longdesc = '" + DropDownBECategory.SelectedItem.Text + "' 	)	", con1);
+            SqlCommand myCommand = new SqlCommand("select top 1 convert(varchar(10),ast_det_datetime1 ,103) ast_det_datetime1,convert(varchar(10),ast_det_warranty_date ,103) ast_det_warranty_date	from ast_det b (nolock)	where ast_det_varchar21 is not null 	and ast_det_varchar21 != 'NA'    and ast_det_varchar21 ='" + DropDownbatch.SelectedItem.Text + "' 	AND ast_det_varchar16 = '" + DropDownSuppliername.SelectedItem.Text + "'and ast_det_modelno = '" + DropDownmodel.SelectedItem.Text + "' and exists (	select '' from ast_mst a (nolock)	where a.RowID = b.mst_RowID and a.ast_mst_asset_longdesc = '" + DropDownBECategory.SelectedItem.Text + "' 	)	", con1);
                 
                 myReader = myCommand.ExecuteReader();
 
-            while (myReader.Read())
-            {
+                while (myReader.Read())
+                {
+                    //Response.Write((myReader["ast_det_datetime1"].ToString().Substring(0, 10)));
                     //TextBox1.Text = (myReader["ast_det_datetime1"].ToString().Substring(0,10));
-                    warenty_start_txt.Text = (myReader["ast_det_datetime1"].ToString().Substring(0, 10));
-                    warenty_end_txt.Text = (myReader["ast_det_warranty_date"].ToString().Substring(0, 10));
-                
-            }
+                    //warenty_start_txt.Text = DateTime.ParseExact((myReader["ast_det_datetime1"].ToString().Substring(0, 10)), "dd/MM/yyyy",
+                    //                               CultureInfo.InvariantCulture).ToString("yyyy-MM-dd"); //;
+                    //warenty_end_txt.Text = DateTime.ParseExact((myReader["ast_det_warranty_date"].ToString().Substring(0, 10)), "dd/MM/yyyy",
+                    //                               CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                    warenty_start_txt.Text = myReader["ast_det_datetime1"].ToString() ;
+                    warenty_end_txt.Text = myReader["ast_det_warranty_date"].ToString() ;
+
+
+                    //(myReader["ast_det_warranty_date"].ToString().Substring(0, 10));
+
+                }
+               // string s = dateTime.ToString("dd/mm/yyyy", CultureInfo.InvariantCulture);
+                //warenty_start_txt.Text = S;
             }
             catch (Exception ex)
             {
@@ -301,6 +315,8 @@ namespace AgingReport
                 
              con1.Close();
             }
+
+          
         }
 
         protected void print_btn_Click(object sender, EventArgs e)
@@ -313,7 +329,7 @@ namespace AgingReport
 
                 //   ServerReport serverReport = MyReportViewer.ServerReport;
 
-                //  MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
+                //MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
                 MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
 
 

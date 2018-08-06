@@ -81,14 +81,17 @@
 <tr>
       <td align="left"> <asp:Label ID="Label5" runat="server" Text="Warrenty Start: " Font-Names="Calibri"  Font-Bold="true" Width="150" Height="25"> </asp:Label> </td>
       <td>
-          <asp:TextBox ID="warenty_start_txt" runat="server" BackColor="White" Width="195" TextMode="Date"></asp:TextBox>
+          <%--<asp:TextBox ID="warenty_start_txt" runat="server" BackColor="White" Width="195" TextMode="Date"></asp:TextBox>--%>
+          <asp:TextBox ID="warenty_start_txt" runat="server" BackColor="White" Width="195" Enabled="False"  ></asp:TextBox>
 
       </td>
     <td></td>
     <td></td>
      <td align="left"> <asp:Label ID="Label6" runat="server" Text="Warrenty End: " Font-Names="Calibri"  Font-Bold="true" Width="150" Height="25"> </asp:Label> </td>
       <td>
-          <asp:TextBox ID="warenty_end_txt" runat="server" BackColor="White" Width="195" TextMode="Date"></asp:TextBox>
+          <%--<asp:TextBox ID="warenty_end_txt" runat="server" BackColor="White" Width="195" TextMode="Date"></asp:TextBox>--%>
+           <asp:TextBox ID="warenty_end_txt" runat="server" BackColor="White" Width="195" Enabled="False"  ></asp:TextBox>
+
 
       </td>
     </tr>
