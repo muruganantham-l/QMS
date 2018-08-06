@@ -17,16 +17,16 @@
       <FullPath>DATASET2.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>EquipMainStatusDS.rsd</Name>
+      <FullPath>EquipMainStatusDS.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Fin08A.rsd</Name>
       <FullPath>Fin08A.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Summary.rsd</Name>
       <FullPath>Summary.rsd</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>equip_maintain_status.rsd</Name>
-      <FullPath>equip_maintain_status.rsd</FullPath>
     </ProjectItem>
   </DataSets>
   <Reports>
@@ -39,6 +39,10 @@
       <FullPath>BillingPBE.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>equipment_maintain_status.rdl</Name>
+      <FullPath>equipment_maintain_status.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Fin08-A.rdl</Name>
       <FullPath>Fin08-A.rdl</FullPath>
     </ProjectItem>
@@ -47,8 +51,8 @@
       <FullPath>Summary.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>equipment_maintanance_status_report.rdl</Name>
-      <FullPath>equipment_maintanance_status_report.rdl</FullPath>
+      <Name>EquipMainStatusRpt.rdl</Name>
+      <FullPath>EquipMainStatusRpt.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
@@ -58,7 +62,7 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://localhost/reportserver</TargetServerURL>
+        <TargetServerURL>http://chs015-2-3/ReportServer</TargetServerURL>
         <TargetFolder>Report Project1</TargetFolder>
         <TargetDataSourceFolder>Data Sources</TargetDataSourceFolder>
         <OverwriteDataSources>true</OverwriteDataSources>

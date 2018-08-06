@@ -98,12 +98,12 @@
     </tr>
   </table>
                 
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
+          
+    </div>
+          <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
             <rsweb:ReportViewer ID="MyReportViewer" runat="server" Width="1000" Height="1000" PageCountMode="Actual" ShowRefreshButton="False" ShowFindControls="False" ShowPrintButton="true" ShowParameterPrompts="false" ShowPromptAreaButton="false">
             </rsweb:ReportViewer> 
-    </div>
-
     </form>
 </body>
 </html>

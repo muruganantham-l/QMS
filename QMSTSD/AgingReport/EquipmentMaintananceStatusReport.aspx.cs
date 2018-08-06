@@ -56,6 +56,11 @@ namespace AgingReport
                         //DropDownCliniccat.Items.Insert(0, new ListItem("CHAIRS, EXAMINATION/TREATMENT, DENTISTRY, SPECIALIST", "2"));
                         //DropDownCliniccat.Items.Insert(0, new ListItem("Chairs, Examination/Treatment, Dentistry", "3"));
                         //DropDownCliniccat.Items.Insert(0, new ListItem("ALL", "0"));
+                        MyReportViewer.ProcessingMode = ProcessingMode.Remote;
+                        // MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
+                        MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
+                        MyReportViewer.ServerReport.ReportPath = "/Report Project1/EquipMainStatusRpt";
+                        MyReportViewer.ServerReport.Refresh();
                     }
                     catch (Exception ex)
                     {
@@ -308,11 +313,12 @@ namespace AgingReport
 
                 //   ServerReport serverReport = MyReportViewer.ServerReport;
 
+                //  MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
                 MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
 
-               
-                    MyReportViewer.ServerReport.ReportPath = "/ReportProject1/";
-                    ReportParameter[] reportParameterCollection = new ReportParameter[4];       //Array size describes the number of paramaters.
+
+                MyReportViewer.ServerReport.ReportPath = "/Report Project1/EquipMainStatusRpt";
+                    ReportParameter[] reportParameterCollection = new ReportParameter[7];       //Array size describes the number of paramaters.
 
                     reportParameterCollection[0] = new ReportParameter();
                     reportParameterCollection[0].Name = "be_category";                                            //Give Your Parameter Name
@@ -328,26 +334,29 @@ namespace AgingReport
                     reportParameterCollection[2].Values.Add(warenty_end_txt.Text);               //Pass Parametrs's value here.
 
                     reportParameterCollection[3] = new ReportParameter();
-                    reportParameterCollection[3].Name = "manufacturer";                                            //Give Your Parameter Name
+                    reportParameterCollection[3].Name = "manufacture";                                            //Give Your Parameter Name
                     reportParameterCollection[3].Values.Add(DropDownManufacture.SelectedItem.Text);                                     //Pass Parametrs's value here.
 
-                reportParameterCollection[3] = new ReportParameter();
-                reportParameterCollection[3].Name = "model";                                            //Give Your Parameter Name
-                reportParameterCollection[3].Values.Add(DropDownmodel.SelectedItem.Text);                                     //Pass Parametrs's value here.
+                reportParameterCollection[4] = new ReportParameter();
+                reportParameterCollection[4].Name = "model";                                            //Give Your Parameter Name
+                reportParameterCollection[4].Values.Add(DropDownmodel.SelectedItem.Text);                                     //Pass Parametrs's value here.
 
-                reportParameterCollection[3] = new ReportParameter();
-                reportParameterCollection[3].Name = "batch";                                            //Give Your Parameter Name
-                reportParameterCollection[3].Values.Add(DropDownbatch.SelectedItem.Text);                                     //Pass Parametrs's value here.
+                reportParameterCollection[5] = new ReportParameter();
+                reportParameterCollection[5].Name = "batch";                                            //Give Your Parameter Name
+                reportParameterCollection[5].Values.Add(DropDownbatch.SelectedItem.Text);                                     //Pass Parametrs's value here.
 
-                reportParameterCollection[3] = new ReportParameter();
-                reportParameterCollection[3].Name = "supp_name";                                            //Give Your Parameter Name
-                reportParameterCollection[3].Values.Add(DropDownSuppliername.SelectedItem.Text);                                     //Pass Parametrs's value here.
+                reportParameterCollection[6] = new ReportParameter();
+                reportParameterCollection[6].Name = "supp_name";                                            //Give Your Parameter Name
+                reportParameterCollection[6].Values.Add(DropDownSuppliername.SelectedItem.Text);                                     //Pass Parametrs's value here.
 
                 MyReportViewer.ServerReport.SetParameters(reportParameterCollection);
 
                     MyReportViewer.ServerReport.Refresh();
 
                
+
+
+
             }
             catch (Exception ex)
             {

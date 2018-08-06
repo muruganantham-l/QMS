@@ -10,16 +10,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="AccessoryReport.aspx">
-      <publishTime>12/05/2017 13:04:27</publishTime>
+      <publishTime>08/01/2018 12:33:54</publishTime>
     </File>
     <File Include="AgingReport.aspx">
       <publishTime>05/04/2018 11:46:22</publishTime>
     </File>
     <File Include="bin/AgingReport.dll">
-      <publishTime>07/31/2018 12:35:24</publishTime>
+      <publishTime>08/02/2018 11:55:21</publishTime>
     </File>
     <File Include="bin/AgingReport.pdb">
-      <publishTime>07/31/2018 12:35:24</publishTime>
+      <publishTime>08/02/2018 11:55:21</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Common.dll">
       <publishTime>02/20/2011 04:40:08</publishTime>
@@ -36,6 +36,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="DetailsView.js">
       <publishTime>01/12/2017 13:10:51</publishTime>
     </File>
+    <File Include="EquipmentMaintananceStatusReport.aspx">
+      <publishTime>08/02/2018 11:04:51</publishTime>
+    </File>
     <File Include="favicon.ico">
       <publishTime>01/19/2017 14:54:04</publishTime>
     </File>
@@ -46,7 +49,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/12/2017 13:10:51</publishTime>
     </File>
     <File Include="IndexPage.aspx">
-      <publishTime>06/06/2018 21:59:33</publishTime>
+      <publishTime>07/31/2018 14:26:45</publishTime>
     </File>
     <File Include="jquery-1.8.2.js">
       <publishTime>01/12/2017 13:11:08</publishTime>
@@ -61,7 +64,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/12/2017 13:11:08</publishTime>
     </File>
     <File Include="KPIReport.aspx">
-      <publishTime>12/05/2017 12:56:46</publishTime>
+      <publishTime>08/01/2018 12:33:54</publishTime>
     </File>
     <File Include="LoginPage.aspx">
       <publishTime>12/05/2017 10:21:48</publishTime>
@@ -97,7 +100,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2017 15:39:32</publishTime>
     </File>
     <File Include="SearchDoc.aspx">
-      <publishTime>07/31/2018 12:26:03</publishTime>
+      <publishTime>07/31/2018 12:55:24</publishTime>
     </File>
     <File Include="Site.css">
       <publishTime>01/19/2017 14:55:01</publishTime>
@@ -118,7 +121,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/10/2018 11:54:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/31/2018 12:43:08</publishTime>
+      <publishTime>08/02/2018 11:55:42</publishTime>
     </File>
     <File Include="WebForms.js">
       <publishTime>01/12/2017 13:10:51</publishTime>
