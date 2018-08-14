@@ -137,6 +137,15 @@
                      <asp:LinkButton runat="server" ID="LinkButton13" PostBackUrl="~/EquipmentMaintananceStatusReport.aspx">Link</asp:LinkButton>
 </asp:TableCell> 
               </asp:TableRow> 
+
+              <asp:TableRow ID="TableRow11" runat="server" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px">
+                  <asp:TableCell ID="TableCell49" runat="server">14</asp:TableCell>
+                  <asp:TableCell ID="TableCell50" runat="server">BE Asset Information Update</asp:TableCell>
+                  <asp:TableCell ID="TableCell51" runat="server">Edit the BE Asset Information using the link</asp:TableCell>
+                  <asp:TableCell ID="TableCell52" runat="server">
+                     <asp:LinkButton runat="server" ID="LinkButton14" PostBackUrl="~/BEAssetInformationUpdate.aspx">Link</asp:LinkButton>
+</asp:TableCell> 
+              </asp:TableRow> 
           </asp:Table>
           <br />
 

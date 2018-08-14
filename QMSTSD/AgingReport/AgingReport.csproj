@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="AccessoryReport.aspx" />
     <Content Include="AgingReport.aspx" />
+    <Content Include="BEAssetInformationUpdate.aspx" />
     <Content Include="CWODownload.aspx" />
     <Content Include="DetailsView.js" />
     <Content Include="EquipmentMaintananceStatusReport.aspx" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="AgingReport.aspx.designer.cs">
       <DependentUpon>AgingReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BEAssetInformationUpdate.aspx.cs">
+      <DependentUpon>BEAssetInformationUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BEAssetInformationUpdate.aspx.designer.cs">
+      <DependentUpon>BEAssetInformationUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="CWODownload.aspx.cs">
       <DependentUpon>CWODownload.aspx</DependentUpon>
