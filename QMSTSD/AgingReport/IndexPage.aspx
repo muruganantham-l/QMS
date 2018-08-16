@@ -146,6 +146,14 @@
                      <asp:LinkButton runat="server" ID="LinkButton14" PostBackUrl="~/BEAssetInformationUpdate.aspx">Link</asp:LinkButton>
 </asp:TableCell> 
               </asp:TableRow> 
+               <asp:TableRow ID="TableRow12" runat="server" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px">
+                  <asp:TableCell ID="TableCell53" runat="server">14</asp:TableCell>
+                  <asp:TableCell ID="TableCell54" runat="server">Validate BE Asset Information</asp:TableCell>
+                  <asp:TableCell ID="TableCell55" runat="server">Validate BE Asset Information using the link</asp:TableCell>
+                  <asp:TableCell ID="TableCell56" runat="server">
+                     <asp:LinkButton runat="server" ID="LinkButton15" PostBackUrl="~/ValidateBEAssetInformation.aspx">Link</asp:LinkButton>
+</asp:TableCell> 
+              </asp:TableRow> 
           </asp:Table>
           <br />
 

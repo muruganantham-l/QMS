@@ -218,22 +218,46 @@ namespace AgingReport
             }
 
             string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connString); 
+            SqlConnection conn = new SqlConnection(connString);
 
-            string sql2 = "update b    set ast_det_mfg_cd = @ast_det_mfg_cd   , ast_det_modelno = @ast_det_modelno  , ast_det_varchar2 = @ast_det_varchar2 , ast_det_varchar19 = @ast_det_varchar19 , ast_det_varchar13 = @ast_det_varchar13   , ast_det_varchar14 = @ast_det_varchar14           from ast_mst (nolock)a,ast_det(Nolock) b where a.rowid = mst_rowid and ast_mst_asset_no = @ast_no ";
-            
-            SqlCommand myCommand2 = new SqlCommand(sql2, conn);
-            myCommand2.Parameters.AddWithValue("@ast_det_mfg_cd", Manufacture.Text);
-            myCommand2.Parameters.AddWithValue("@ast_det_modelno", Model.Text);
-            myCommand2.Parameters.AddWithValue("@ast_det_varchar2", SerialNumber.Text);
-            myCommand2.Parameters.AddWithValue("@ast_det_varchar19", BELocation.Text);
-            myCommand2.Parameters.AddWithValue("@ast_det_varchar13", KEWPA_Number.Text);
-            myCommand2.Parameters.AddWithValue("@ast_det_varchar14", JKKP_Certificate_Number.Text);
-            myCommand2.Parameters.AddWithValue("@ast_no", be_number_txt.Text);
+            //string sql2 = "update b    set ast_det_mfg_cd = @ast_det_mfg_cd   , ast_det_modelno = @ast_det_modelno  , ast_det_varchar2 = @ast_det_varchar2 , ast_det_varchar19 = @ast_det_varchar19 , ast_det_varchar13 = @ast_det_varchar13   , ast_det_varchar14 = @ast_det_varchar14           from ast_mst (nolock)a,ast_det(Nolock) b where a.rowid = mst_rowid and ast_mst_asset_no = @ast_no ";
+
+            //SqlCommand myCommand2 = new SqlCommand(sql2, conn);
+            //myCommand2.Parameters.AddWithValue("@ast_det_mfg_cd", Manufacture.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_det_modelno", Model.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_det_varchar2", SerialNumber.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_det_varchar19", BELocation.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_det_varchar13", KEWPA_Number.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_det_varchar14", JKKP_Certificate_Number.Text);
+            //myCommand2.Parameters.AddWithValue("@ast_no", be_number_txt.Text);
+            //try
+            //{
+            //    conn.Open();
+            //    myCommand2.ExecuteNonQuery();
+            //}
             try
             {
+                 
+                SqlCommand cmd = new SqlCommand("edit_be_asset_information_validate", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("be_number", be_number_txt.Text);
+                cmd.Parameters.AddWithValue("Manufacture", Manufacture.Text);
+                cmd.Parameters.AddWithValue("Model", Model.Text);
+                cmd.Parameters.AddWithValue("SerialNumber", SerialNumber.Text);
+                cmd.Parameters.AddWithValue("BELocation", BELocation.Text);
+                cmd.Parameters.AddWithValue("KEWPA_Number", KEWPA_Number.Text);
+                cmd.Parameters.AddWithValue("JKKP_Certificate_Number", JKKP_Certificate_Number.Text);
+                cmd.Parameters.AddWithValue("ctxt_user", Session["name"]);
+                
+
                 conn.Open();
-                myCommand2.ExecuteNonQuery();
+                int k = cmd.ExecuteNonQuery();
+                if (k != 0)
+                {
+                    Label29.Text = "Record Inserted Succesfully into the Database";
+                    Label29.ForeColor = System.Drawing.Color.CornflowerBlue;
+                }
+                conn.Close();
             }
         catch (Exception ex)
             {
