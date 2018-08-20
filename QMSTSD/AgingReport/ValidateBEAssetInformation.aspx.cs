@@ -33,7 +33,41 @@ namespace AgingReport
                     validate_flagDropDownList.Items.Insert(1, new ListItem("Yes", "Y"));
                     validate_flagDropDownList.Items.Insert(2, new ListItem("No", "N"));
 
-                    
+                    string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
+                    SqlConnection con = null;
+
+                    try
+                    {
+                        con = new SqlConnection(connString);
+                        /*For District Dropdown Load*/
+
+                        string com1 = "select distinct ast_loc_desc ast_loc_state from ast_loc(nolock) order by ast_loc_desc";
+
+                        SqlDataAdapter adpt1 = new SqlDataAdapter(com1, con);
+                        DataTable dt1 = new DataTable();
+                        adpt1.Fill(dt1);
+                        state_dropdownlist.DataSource = dt1;
+                        state_dropdownlist.DataBind();
+                        state_dropdownlist.DataTextField = "ast_loc_state";
+                        state_dropdownlist.DataValueField = "ast_loc_state";
+                        state_dropdownlist.DataBind();
+                        state_dropdownlist.Items.Insert(0, new ListItem("--Select--", "0"));
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //log error 
+                        //display friendly error to user
+                        string msg = " Upload Error: ";
+                        msg += ex.Message;
+
+
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+
 
                 }
             }
@@ -48,6 +82,9 @@ namespace AgingReport
                     cmd.Parameters.AddWithValue("@Action", "SELECT");
                      
                     cmd.Parameters.Add("@validate_flag", SqlDbType.VarChar).Value = validate_flagDropDownList.SelectedValue.ToString();
+                    //cmd.Parameters.Add("@state", SqlDbType.VarChar).Value = state_dropdownlist.SelectedItem.Text;
+
+                    
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -82,7 +119,7 @@ namespace AgingReport
         {
             try { 
             GridViewRow row = GridView1.Rows[e.RowIndex];
-            int s_no = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+             
             string be_number = (row.FindControl("be_number_txt") as Label).Text;
             string Manufacture = (row.FindControl("Manufacture_txt") as TextBox).Text;
 
@@ -103,7 +140,7 @@ namespace AgingReport
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "UPDATE");
-                    cmd.Parameters.AddWithValue("@s_no", s_no);
+                    
                     cmd.Parameters.AddWithValue("@be_number", be_number);
                     cmd.Parameters.AddWithValue("@Manufacture", Manufacture);
                     cmd.Parameters.AddWithValue("@Model", Model);
@@ -182,7 +219,7 @@ namespace AgingReport
             cmd.Parameters.Add("@validate_flag", SqlDbType.VarChar).Value = validate_flagDropDownList.SelectedValue.ToString();
             
             cmd.Parameters.AddWithValue("@Action", "SELECT");
-
+            cmd.Parameters.Add("@state", SqlDbType.VarChar).Value = state_dropdownlist.SelectedItem.Text;
             cmd.Connection = con;
 
             try

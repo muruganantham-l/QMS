@@ -12,6 +12,7 @@ alter PROCEDURE [dbo].curd_be_asset_infrm_validate
  ,@KEWPA_Number					varchar(300)=null
  ,@JKKP_Certificate_Number		varchar(300)=null
  ,@validated_by					varchar(300)=null
+  ,@state					varchar(300)=null
 
 AS
 BEGIN
@@ -48,7 +49,7 @@ BEGIN
       BEGIN
 select 
 s_no
-,be_number				
+,upper(be_number)
 ,Manufacture			
 ,Model					
 ,SerialNumber			
@@ -66,7 +67,19 @@ s_no
 --,existing_mst_fields
 from be_asset_information_validate (nolock)
 where validate_flag =  @validate_flag
+and exists (select ''
+			from ast_mst a (nolock)
+			where a.ast_mst_asset_no = be_number
+			and a.ast_mst_asset_locn = @state--'PERAK'
+			
+			)
 
+
+		 --PERAK
+
+		-- select ast_mst_asset_locn,* from be_asset_information_validate b join ast_mst a on be_number = ast_mst_asset_no
+
+			--drop table test
 
 --alter table be_asset_information_validate
 ----drop column existing_mst_flag

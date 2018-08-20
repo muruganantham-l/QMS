@@ -21,8 +21,16 @@ namespace AgingReport
             {
                 string username = Session["name"].ToString();
                 this.lblWelcomeMessage.Text = string.Format("Hi {0}", Session["name"].ToString() + "!");
-              //  lblWelcomeMessage.Visible = false;
-               // lblWelcomeMessage.Text = username;
+
+                if (username == "sekarsuppiah" || username == "tomms")
+                    {
+                    TableRow12.Visible = true;
+                        }
+                else {
+                    TableRow12.Visible = false;
+                }
+                //  lblWelcomeMessage.Visible = false;
+                // lblWelcomeMessage.Text = username;
             }
         }
     }

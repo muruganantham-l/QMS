@@ -28,7 +28,7 @@
             <table>
                 <tr>
                     <td>
-                        <asp:Label ID="l1" runat="server" Text="Validated"></asp:Label>
+                        <asp:Label ID="l1" runat="server" Text="Validated" Width="50" ></asp:Label>
                     </td>
                     <td>
                         <asp:DropDownList ID="validate_flagDropDownList" runat="server" AutoPostBack="true" BackColor="White" DataTextField="flag_id" DataValueField="flag_txt" Width="200" Height="25" ></asp:DropDownList>
@@ -37,8 +37,12 @@
                     <td>
                         <asp:Label ID="Label2" runat="server" Width="100" ></asp:Label>
                     </td>
-                
-                     
+                 <td>
+                        <asp:Label ID="Label1" runat="server" Text="State" Width="50" ></asp:Label>
+                    </td>
+                       <td>
+                        <asp:DropDownList ID="state_dropdownlist" runat="server" AutoPostBack="true" BackColor="White" DataTextField="ast_loc_state" DataValueField="ast_loc_state" Width="200" Height="25" ></asp:DropDownList>
+                    </td>
                     
                     <td>
                         <asp:Label ID="Label3" runat="server" Width="100" ></asp:Label>
@@ -52,19 +56,19 @@
             
             
            
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="s_no"
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="be_number"
 OnRowDataBound="OnRowDataBound" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit"
 OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
 <Columns>
-    <asp:TemplateField HeaderText="S.No" ItemStyle-Width="150">
+    
+     <asp:TemplateField HeaderText="S.No" ItemStyle-Width="150">
         <ItemTemplate>
-            <asp:Label ID="s_no" runat="server" Text='<%# Eval("s_no") %>'></asp:Label>
+            <asp:Label ID="row_no" runat="server" Text='<%# Eval("row_no") %>'></asp:Label>
         </ItemTemplate>
         <EditItemTemplate>
-            <asp:Label ID="s_no" runat="server" Text='<%# Eval("s_no") %>'></asp:Label>
+            <asp:Label ID="row_no" runat="server" Text='<%# Eval("row_no") %>'></asp:Label>
         </EditItemTemplate>
     </asp:TemplateField>
-
     <asp:TemplateField HeaderText="BE Number" ItemStyle-Width="150">
         <ItemTemplate>
             <asp:Label ID="lblName" runat="server" Text='<%# Eval("be_number") %>'></asp:Label>
