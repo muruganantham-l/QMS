@@ -95,7 +95,7 @@ where validate_flag =  @validate_flag
 
 				UPDATE be_asset_information_validate
 				SET  
-				Manufacture				= @Manufacture				
+				Manufacture				= @Manufacture 
 				,Model						=	@Model
 				,SerialNumber				= @SerialNumber		
 				,BELocation				=	@BELocation			
@@ -108,12 +108,12 @@ where validate_flag =  @validate_flag
 				and be_number = @be_number
 
 				update d
-				set     ast_det_mfg_cd = @Manufacture
-				,ast_det_modelno = @Model
-				,ast_det_varchar2 = @SerialNumber
-				,ast_det_varchar19 = @BELocation
-				,ast_det_varchar13 = @KEWPA_Number
-				,ast_det_varchar14 = @JKKP_Certificate_Number
+				set     ast_det_mfg_cd = isnull(@Manufacture,ast_det_mfg_cd)
+				,ast_det_modelno = isnull(@Model,ast_det_modelno)
+				,ast_det_varchar2 = isnull(@SerialNumber,ast_det_varchar2)
+				,ast_det_varchar19 = isnull(@BELocation,ast_det_varchar19)
+				,ast_det_varchar13 = isnull(@KEWPA_Number,ast_det_varchar13)
+				,ast_det_varchar14 = isnull(@JKKP_Certificate_Number,ast_det_varchar14)
 				from    ast_mst m (nolock)
 				join	ast_det d (nolock)
 				on		m.rowid =	d.mst_rowid 
