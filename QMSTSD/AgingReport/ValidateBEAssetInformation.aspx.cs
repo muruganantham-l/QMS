@@ -33,9 +33,7 @@ namespace AgingReport
                     validate_flagDropDownList.Items.Insert(1, new ListItem("Yes", "Y"));
                     validate_flagDropDownList.Items.Insert(2, new ListItem("No", "N"));
 
-                    updated_flagDropDownList.Items.Insert(0, new ListItem("--Select--", "0"));
-                    updated_flagDropDownList.Items.Insert(1, new ListItem("Yes", "Y"));
-                    updated_flagDropDownList.Items.Insert(2, new ListItem("No", "N"));
+                    
 
                 }
             }
@@ -48,6 +46,8 @@ namespace AgingReport
                 using (SqlCommand cmd = new SqlCommand("curd_be_asset_infrm_validate"))
                 {
                     cmd.Parameters.AddWithValue("@Action", "SELECT");
+                     
+                    cmd.Parameters.Add("@validate_flag", SqlDbType.VarChar).Value = validate_flagDropDownList.SelectedValue.ToString();
                     using (SqlDataAdapter sda = new SqlDataAdapter())
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -80,20 +80,39 @@ namespace AgingReport
 
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            try { 
             GridViewRow row = GridView1.Rows[e.RowIndex];
-            int customerId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string name = (row.FindControl("be_number_txt") as TextBox).Text;
-            string country = (row.FindControl("Manufacture_txt") as TextBox).Text;
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            int s_no = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+            string be_number = (row.FindControl("be_number_txt") as Label).Text;
+            string Manufacture = (row.FindControl("Manufacture_txt") as TextBox).Text;
+
+            string Model = (row.FindControl("Model_txt") as TextBox).Text;
+            string SerialNumber = (row.FindControl("SerialNumber") as TextBox).Text;
+
+            string BELocation = (row.FindControl("BELocation") as TextBox).Text;
+            string KEWPA_Number = (row.FindControl("KEWPA_Number") as TextBox).Text;
+            string JKKP_Certificate_Number = (row.FindControl("JKKP_Certificate_Number") as TextBox).Text;
+            string validated_by = Session["name"].ToString();
+
+
+
+            string constr = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("curd_be_asset_infrm_validate"))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "UPDATE");
-                    cmd.Parameters.AddWithValue("@CustomerId", customerId);
-                    cmd.Parameters.AddWithValue("@Name", name);
-                    cmd.Parameters.AddWithValue("@Country", country);
+                    cmd.Parameters.AddWithValue("@s_no", s_no);
+                    cmd.Parameters.AddWithValue("@be_number", be_number);
+                    cmd.Parameters.AddWithValue("@Manufacture", Manufacture);
+                    cmd.Parameters.AddWithValue("@Model", Model);
+                    cmd.Parameters.AddWithValue("@SerialNumber", SerialNumber);
+                    cmd.Parameters.AddWithValue("@BELocation", BELocation);
+                    cmd.Parameters.AddWithValue("@KEWPA_Number", KEWPA_Number);
+                    cmd.Parameters.AddWithValue("@JKKP_Certificate_Number", JKKP_Certificate_Number);
+                    cmd.Parameters.AddWithValue("@validated_by", validated_by);
+
                     cmd.Connection = con;
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -102,6 +121,14 @@ namespace AgingReport
             }
             GridView1.EditIndex = -1;
             this.BindGrid();
+        }
+            catch (Exception ex)
+
+            {
+
+                throw ex;
+
+            }
         }
 
         protected void OnRowCancelingEdit(object sender, EventArgs e)
@@ -112,8 +139,9 @@ namespace AgingReport
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            try { 
             int customerId = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+            string constr = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("curd_be_asset_infrm_validate"))
@@ -129,6 +157,14 @@ namespace AgingReport
             }
             this.BindGrid();
         }
+             catch (Exception ex)
+
+            {
+
+                throw ex;
+
+            }
+        }
 
         protected void search_btn_Click(object sender, EventArgs e)
         {
@@ -141,10 +177,11 @@ namespace AgingReport
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.CommandText = "search_be_asset_infrm_validate";
+            cmd.CommandText = "curd_be_asset_infrm_validate";
 
-            cmd.Parameters.Add("@validate_flag", SqlDbType.VarChar).Value = validate_flagDropDownList.SelectedItem.Text;
-            cmd.Parameters.Add("@updated_flag", SqlDbType.VarChar).Value = updated_flagDropDownList.SelectedItem.Text;
+            cmd.Parameters.Add("@validate_flag", SqlDbType.VarChar).Value = validate_flagDropDownList.SelectedValue.ToString();
+            
+            cmd.Parameters.AddWithValue("@Action", "SELECT");
 
             cmd.Connection = con;
 

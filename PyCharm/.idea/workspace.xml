@@ -2,22 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7e9d9f6-3f71-47ad-a91c-108328cca401" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tuples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tuples.py" beforeDir="false" afterPath="$PROJECT_DIR$/tuples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/.vs/AgingReport/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/AgingReport.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/AgingReport.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/IndexPage.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/IndexPage.aspx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/IndexPage.aspx.designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/IndexPage.aspx.designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx.designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/BEAssetInformationUpdate.aspx.designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx.designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/ValidateBEAssetInformation.aspx.designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/bin/AgingReport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/bin/AgingReport.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/bin/AgingReport.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/bin/AgingReport.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/AgingReport.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/AgingReport/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../QMSTSD/SQL/edit_be_asset_information_validate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../QMSTSD/SQL/edit_be_asset_information_validate.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +38,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="90" />
+          <entry key="py" value="744" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="90" />
+          <entry key="Python" value="744" />
         </counts>
       </usages-collector>
     </session>
@@ -54,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tuples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            <state relative-caret-position="279">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -244,8 +243,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tuples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        <state relative-caret-position="279">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>

@@ -17,7 +17,14 @@
              </h2>
          </hgroup>
         <div title="Validate BE Asset Information"  style="height: 255px" >
-
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label13" runat="server" Font-Bold="True" Font-Italic="False" Font-Names="Calibri" Font-Size="Large" Text="Validate BE Asset Information" Width="265px" style="text-align: center"></asp:Label>               
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+            &nbsp;
+            &nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+            <br />
             <table>
                 <tr>
                     <td>
@@ -31,12 +38,8 @@
                         <asp:Label ID="Label2" runat="server" Width="100" ></asp:Label>
                     </td>
                 
-                    <td>
-                        <asp:Label ID="Label1" runat="server" Text="Updated"></asp:Label>
-                    </td>
-                    <td>
-                         <asp:DropDownList ID="updated_flagDropDownList" runat="server" AutoPostBack="true" BackColor="White" DataTextField="flag_id" DataValueField="flag_txt" Width="200" Height="25" ></asp:DropDownList>
-                    </td>
+                     
+                    
                     <td>
                         <asp:Label ID="Label3" runat="server" Width="100" ></asp:Label>
                     </td>
@@ -49,16 +52,25 @@
             
             
            
-             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="be_number"
+             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="s_no"
 OnRowDataBound="OnRowDataBound" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit"
 OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No records has been added.">
 <Columns>
+    <asp:TemplateField HeaderText="S.No" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="s_no" runat="server" Text='<%# Eval("s_no") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="s_no" runat="server" Text='<%# Eval("s_no") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+
     <asp:TemplateField HeaderText="BE Number" ItemStyle-Width="150">
         <ItemTemplate>
             <asp:Label ID="lblName" runat="server" Text='<%# Eval("be_number") %>'></asp:Label>
         </ItemTemplate>
         <EditItemTemplate>
-            <asp:TextBox ID="be_number_txt" runat="server" Text='<%# Eval("be_number") %>'></asp:TextBox>
+            <asp:Label ID="be_number_txt" runat="server" Text='<%# Eval("be_number") %>'></asp:Label>
         </EditItemTemplate>
     </asp:TemplateField>
     <asp:TemplateField HeaderText="Manufacture" ItemStyle-Width="150">
@@ -96,9 +108,81 @@ OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No re
         </EditItemTemplate>
     </asp:TemplateField>
 
+     <asp:TemplateField HeaderText="KEWPA Number" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="KEWPA_Number" runat="server" Text='<%# Eval("KEWPA_Number") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:TextBox ID="KEWPA_Number" runat="server" Text='<%# Eval("KEWPA_Number") %>'></asp:TextBox>
+        </EditItemTemplate>
+    </asp:TemplateField>
+    
+    <asp:TemplateField HeaderText="JKKP Certificate Number" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="JKKP_Certificate_Number" runat="server" Text='<%# Eval("JKKP_Certificate_Number") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:TextBox ID="JKKP_Certificate_Number" runat="server" Text='<%# Eval("JKKP_Certificate_Number") %>'></asp:TextBox>
+        </EditItemTemplate>
+    </asp:TemplateField>
 
     
-    <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true" ItemStyle-Width="150"/>
+
+     <asp:TemplateField HeaderText="Validated By" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="validated_by" runat="server" Text='<%# Eval("validated_by") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="validated_by" runat="server" Text='<%# Eval("validated_by") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+     <asp:TemplateField HeaderText="Validated Date" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="validated_date" runat="server" Text='<%# Eval("validated_date") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="validated_date" runat="server" Text='<%# Eval("validated_date") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+     <asp:TemplateField HeaderText="Created By" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="created_by" runat="server" Text='<%# Eval("created_by") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="created_by" runat="server" Text='<%# Eval("created_by") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+     <asp:TemplateField HeaderText="Created Date" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="created_date" runat="server" Text='<%# Eval("created_date") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="created_date" runat="server" Text='<%# Eval("created_date") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+
+     <asp:TemplateField HeaderText="Modified By" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="modified_by" runat="server" Text='<%# Eval("modified_by") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="modified_by" runat="server" Text='<%# Eval("modified_by") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+
+
+     <asp:TemplateField HeaderText="Modified Date" ItemStyle-Width="150">
+        <ItemTemplate>
+            <asp:Label ID="modified_date" runat="server" Text='<%# Eval("modified_date") %>'></asp:Label>
+        </ItemTemplate>
+        <EditItemTemplate>
+            <asp:Label ID="modified_date" runat="server" Text='<%# Eval("modified_date") %>'></asp:Label>
+        </EditItemTemplate>
+    </asp:TemplateField>
+
+   
+
+    <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="false" ItemStyle-Width="150"/>
 </Columns>
 </asp:GridView>
         </div>

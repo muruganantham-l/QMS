@@ -1,3 +1,4 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 alter proc edit_be_asset_information_validate
  @be_number					varchar(300)	= null	
 ,@Manufacture				varchar(300)	= null
@@ -29,7 +30,7 @@ set Manufacture					= @Manufacture
 ,BELocation						= @BELocation			
 ,KEWPA_Number					= @KEWPA_Number			
 ,JKKP_Certificate_Number		= @JKKP_Certificate_Number
- 		
+ ,validate_flag	=	'N'		
 ,modified_by	 = 	@ctxt_user	
 ,modified_date =  @sysdate
 where be_number = @be_number
@@ -69,3 +70,4 @@ end
 
 set nocount off
 end
+
