@@ -1,0 +1,2 @@
+D:\Muruganantham\GITHUB-QMS\QMS\ASp_13.1.0.24_vs2010607059094\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
+D:\Muruganantham\GITHUB-QMS\QMS\ASp_13.1.0.24_vs2010607059094\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache

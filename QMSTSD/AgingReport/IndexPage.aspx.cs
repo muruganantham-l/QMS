@@ -25,9 +25,17 @@ namespace AgingReport
                 if (username == "sekarsuppiah" || username == "tomms")
                     {
                     TableRow12.Visible = true;
+
+                    if (username == "tomms")
+                    {
+                        TableRow13.Visible = true;
+                    }
+
+
                         }
                 else {
                     TableRow12.Visible = false;
+                    TableRow13.Visible = false;
                 }
                 //  lblWelcomeMessage.Visible = false;
                 // lblWelcomeMessage.Text = username;

@@ -1,0 +1,18 @@
+
+
+Date:2018-08-27 15:46:39,058
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.VSExtension.Base.AddinProjectWizardbase                         [(null)]
+Message:System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Syncfusion.VSExtension.Base.AddinProjectWizardbase.GetBaseAssembliesInstallLocation(String version, String frameworkVersion, MVCProjectVersions mvcVersion, ProjectsTypes platForm)
+   at Syncfusion.VSExtension.Base.AddinProjectWizardbase.AddMissingReferencePath(List`1 missingReferenceList, String Mvcversion, String latestVersion, String frameworkversion, ProjectsTypes projecttype, VSProject vsproject, Project _Project)
+
+
+Date:2018-08-27 15:46:54,129
+Thread:[1]
+Level:ERROR
+Logger:Syncfusion.VSExtension.Troubleshooter.SyncfusionTroubleshooterVM                         [(null)]
+Message:System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at Syncfusion.VSExtension.Base.AddinProjectWizardbase.GetBuildInstallLocation(String version, ProjectsTypes platForm)
+   at Syncfusion.VSExtension.Troubleshooter.SyncfusionTroubleshooterVM.Troubleshoot()

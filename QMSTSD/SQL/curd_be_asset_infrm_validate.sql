@@ -3,7 +3,7 @@ alter PROCEDURE [dbo].curd_be_asset_infrm_validate
      @validate_flag		varchar(20) = null
 
  ,@Action VARCHAR(10) = 'SELECT'
- ,@s_no int					=null 
+  
  ,@be_number					varchar(300)=null
  ,@Manufacture					varchar(300)=null
  ,@Model						varchar(300)=null
@@ -49,7 +49,7 @@ BEGIN
       BEGIN
 select 
 s_no
-,upper(be_number)
+,upper(be_number) be_number
 ,Manufacture			
 ,Model					
 ,SerialNumber			
@@ -64,6 +64,7 @@ s_no
 ,updated_flag		
 ,validated_by	
 ,validated_date
+,row_number() over(order by be_number) row_no
 --,existing_mst_fields
 from be_asset_information_validate (nolock)
 where validate_flag =  @validate_flag
@@ -117,8 +118,8 @@ and exists (select ''
 				,validated_by				= @validated_by
 				,validated_date			= @sysdate
 				,validate_flag		   = 'Y'
-				WHERE s_no = @s_no
-				and be_number = @be_number
+				WHERE  
+				  be_number = @be_number
 
 				update d
 				set     ast_det_mfg_cd = isnull(@Manufacture,ast_det_mfg_cd)

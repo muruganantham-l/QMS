@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D69230F-5B1C-41B9-90AB-8107C37FA9B0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Syncfusion.EJ, Version=13.1400.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.EJ.Web, Version=13.1400.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\ej.web.all.min.js" />
+    <Content Include="scripts\ej.webform.min.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery.easing.1.3.min.js" />
+    <Content Include="scripts\jquery.globalize.min.js" />
+    <Content Include="scripts\jsrender.min.js" />
+    <Content Include="themes\common-images\colorpicker_dark.png" />
+    <Content Include="themes\common-images\colorpicker_light.png" />
+    <Content Include="themes\common-images\diagram_context.png" />
+    <Content Include="themes\common-images\diagram_context1.png" />
+    <Content Include="themes\common-images\ejicons.svg" />
+    <Content Include="themes\common-images\maps\Arrow_Bootom.png" />
+    <Content Include="themes\common-images\maps\Arrow_Bootom_hover.png" />
+    <Content Include="themes\common-images\maps\Arrow_Left.png" />
+    <Content Include="themes\common-images\maps\Arrow_Left_hover.png" />
+    <Content Include="themes\common-images\maps\Arrow_Right.png" />
+    <Content Include="themes\common-images\maps\Arrow_Right_hover.png" />
+    <Content Include="themes\common-images\maps\Arrow_Top.png" />
+    <Content Include="themes\common-images\maps\Arrow_Top_hover.png" />
+    <Content Include="themes\common-images\maps\Bar.png" />
+    <Content Include="themes\common-images\maps\Home.png" />
+    <Content Include="themes\common-images\maps\Home_hover.png" />
+    <Content Include="themes\common-images\maps\Home_hover_lime.png" />
+    <Content Include="themes\common-images\maps\Home_hover_saffron.png" />
+    <Content Include="themes\common-images\maps\Home_lime.png" />
+    <Content Include="themes\common-images\maps\Home_saffron.png" />
+    <Content Include="themes\common-images\maps\Navicatior.png" />
+    <Content Include="themes\common-images\maps\Zoom-In.png" />
+    <Content Include="themes\common-images\maps\Zoom-In_hover.png" />
+    <Content Include="themes\common-images\maps\Zoom-out.png" />
+    <Content Include="themes\common-images\maps\Zoom-out_hover.png" />
+    <Content Include="themes\common-images\olapkpi\circle.png" />
+    <Content Include="themes\common-images\olapkpi\diamond.png" />
+    <Content Include="themes\common-images\olapkpi\down-arrow.png" />
+    <Content Include="themes\common-images\olapkpi\green.png" />
+    <Content Include="themes\common-images\olapkpi\red.png" />
+    <Content Include="themes\common-images\olapkpi\right-arrow.png" />
+    <Content Include="themes\common-images\olapkpi\three-color.png" />
+    <Content Include="themes\common-images\olapkpi\triangle.png" />
+    <Content Include="themes\common-images\olapkpi\up-arrow.png" />
+    <Content Include="themes\common-images\radialmenu\back.png" />
+    <Content Include="themes\common-images\radialmenu\radial.png" />
+    <Content Include="themes\common-images\reports\down.png" />
+    <Content Include="themes\common-images\reports\minus.gif" />
+    <Content Include="themes\common-images\reports\plus.gif" />
+    <Content Include="themes\common-images\reports\up.png" />
+    <Content Include="themes\common-images\reports\updown.png" />
+    <Content Include="themes\common-images\Rotate.cur" />
+    <Content Include="themes\ej.widgets.core.min.css" />
+    <Content Include="themes\flat-lime\ej.theme.min.css" />
+    <Content Include="themes\flat-lime\ej.web.all.css" />
+    <Content Include="themes\flat-lime\ej.web.all.min.css" />
+    <Content Include="themes\flat-lime\ej.widgets.all.css" />
+    <Content Include="themes\flat-lime\ej.widgets.all.min.css" />
+    <Content Include="themes\flat-lime\images\ajax-loader.gif" />
+    <Content Include="themes\flat-lime\images\checkedtick.png" />
+    <Content Include="themes\flat-lime\images\dot.png" />
+    <Content Include="themes\flat-lime\images\drop-sibling.png" />
+    <Content Include="themes\flat-lime\images\gradient.png" />
+    <Content Include="themes\flat-lime\images\palette-arrow.png" />
+    <Content Include="themes\flat-lime\images\rating-star.png" />
+    <Content Include="themes\flat-lime\images\rotator-icon.png" />
+    <Content Include="themes\flat-lime\images\toggle-text.png" />
+    <Content Include="themes\flat-lime\images\toolbar_icons.png" />
+    <Content Include="themes\flat-lime\images\transparent.png" />
+    <Content Include="themes\flat-lime\images\ui-icon.png" />
+    <Content Include="themes\flat-lime\images\waitingpopup.gif" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="themes\common-images\ejicons.eot" />
+    <None Include="themes\common-images\ejicons.ttf" />
+    <None Include="themes\common-images\ejicons.woff" />
+    <None Include="themes\flat-lime\ej.theme.less" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5637</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
