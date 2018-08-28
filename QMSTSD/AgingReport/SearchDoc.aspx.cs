@@ -132,6 +132,8 @@ namespace AgingReport
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            /*
             string BeNumValid = Isbenumbervalid();
             if (BeNumValid == "false")
             {
@@ -146,6 +148,8 @@ namespace AgingReport
             else {
                 Label5.Visible = false;
             }
+
+            */
             string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             SqlConnection con = null;
 

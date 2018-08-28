@@ -154,15 +154,6 @@
                      <asp:LinkButton runat="server" ID="LinkButton15" PostBackUrl="~/ValidateBEAssetInformation.aspx">Link</asp:LinkButton>
 </asp:TableCell> 
               </asp:TableRow> 
-
-              <asp:TableRow ID="TableRow13" runat="server" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px">
-                  <asp:TableCell ID="TableCell57" runat="server">16</asp:TableCell>
-                  <asp:TableCell ID="TableCell58" runat="server">Download Masters</asp:TableCell>
-                  <asp:TableCell ID="TableCell59" runat="server">Download Masters</asp:TableCell>
-                  <asp:TableCell ID="TableCell60" runat="server">
-                     <asp:LinkButton runat="server" ID="LinkButton16" PostBackUrl="~/DownloadMasters.aspx">Link</asp:LinkButton>
-</asp:TableCell> 
-              </asp:TableRow> 
           </asp:Table>
           <br />
 
