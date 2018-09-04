@@ -257,7 +257,7 @@ namespace AgingReport
                                           //  Response.Write(virtualpath);
 
                                 SqlCommand cmd = new SqlCommand("insert into Doc_upload_detail (Year,DocumentType,State,District,Filename,Folder,Uploadedby,filetype) " +
-                                    "Select '" + year + "','" + DocumentType + "','" + State + "','" + District + "','" + filenames + "','" + path + "/" + filenames + "','" + test + "','" + extension + "'", con);
+                                    "Select '" + year + "','" + DocumentType + "','" + State + "','" + District + "','" + filenames+'.'+extension + "','" + path + "/" + filenames + "','" + test + "','" + extension + "'", con);
                                 cmd.CommandTimeout = 1000;
                                 cmd.ExecuteNonQuery();
 
