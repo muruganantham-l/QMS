@@ -41,7 +41,7 @@ namespace AgingReport
                         con = new SqlConnection(connString);
                         /*For District Dropdown Load*/
 
-                        string com1 = "select distinct ast_loc_desc ast_loc_state from ast_loc(nolock) order by ast_loc_desc";
+                        string com1 = "select distinct ast_lvl_ast_lvl ast_loc_state from ast_lvl(nolock) order by ast_lvl_ast_lvl";
 
                         SqlDataAdapter adpt1 = new SqlDataAdapter(com1, con);
                         DataTable dt1 = new DataTable();

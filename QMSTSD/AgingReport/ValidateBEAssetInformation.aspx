@@ -1,4 +1,4 @@
-﻿in<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValidateBEAssetInformation.aspx.cs" Inherits="AgingReport.ValidateBEAssetInformation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValidateBEAssetInformation.aspx.cs" Inherits="AgingReport.ValidateBEAssetInformation" %>
 
 <!DOCTYPE html>
 
