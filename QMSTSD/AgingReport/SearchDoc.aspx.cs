@@ -132,24 +132,20 @@ namespace AgingReport
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            /*
-            string BeNumValid = Isbenumbervalid();
-            if (BeNumValid == "false")
-            {
-                // Response.Write(BeNumValid);
+            //string BeNumValid = Isbenumbervalid();
+            //if (BeNumValid == "false")
+            //{
+            //    // Response.Write(BeNumValid);
 
 
-                Label5.ForeColor = System.Drawing.Color.Red;
-                Label5.Visible = true;
-                Label5.Text = " Please enter valid BE Number";
-                return;
-            }
-            else {
-                Label5.Visible = false;
-            }
-
-            */
+            //    Label5.ForeColor = System.Drawing.Color.Red;
+            //    Label5.Visible = true;
+            //    Label5.Text = " Please enter valid BE Number";
+            //    return;
+            //}
+            //else {
+            //    Label5.Visible = false;
+            //}
             string connString = ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString;
             SqlConnection con = null;
 
