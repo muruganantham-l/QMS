@@ -27,7 +27,7 @@
                     </Items>
                       <Items>
 
-                        <ej:MenuItem Text="Work Order"></ej:MenuItem>
+                        <ej:MenuItem Text="Work Order" Url="~/DownloadWorkOrder"></ej:MenuItem>
 
                     </Items>
 

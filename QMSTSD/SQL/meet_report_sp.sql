@@ -28,8 +28,9 @@ on	    a.rowid  = b.mst_rowid
 where   (ast_mst_ast_lvl = @state_name or @state_name is null)
 and     a.ast_mst_asset_status in ('act','pbr')
 and		left(a.ast_mst_safety_rqmts,2) in ('v1','v2')
+and     ast_det_varchar15 = 'Existing'
 group by ast_mst_ast_lvl,ast_mst_asset_locn
-
+ 
 
 update m
 set    add_no_of_be = b.total_item
@@ -43,6 +44,7 @@ on	    a.rowid  = b.mst_rowid
 where   (ast_mst_ast_lvl = @state_name or @state_name is null)
 and     a.ast_mst_asset_status in ('act','pbr')
 and		left(a.ast_mst_safety_rqmts,2) in ('v8')
+and     ast_det_varchar15 = 'Existing'
 group by ast_mst_ast_lvl,ast_mst_asset_locn
 
 )b
@@ -111,3 +113,4 @@ submission_period   varchar(200)
 
 --drop table meet
 */
+
