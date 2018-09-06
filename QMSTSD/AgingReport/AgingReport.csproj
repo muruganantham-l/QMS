@@ -82,6 +82,7 @@
     <Content Include="KPIReport.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="MEET.aspx" />
     <Content Include="Menu.js" />
     <Content Include="MenuStandards.js" />
     <Content Include="modernizr-2.6.2.js" />
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MEET.aspx.cs">
+      <DependentUpon>MEET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MEET.aspx.designer.cs">
+      <DependentUpon>MEET.aspx</DependentUpon>
     </Compile>
     <Compile Include="PenaltyReport.aspx.cs">
       <DependentUpon>PenaltyReport.aspx</DependentUpon>

@@ -4,15 +4,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
-    <%:Styles.Render("~/Content/bootstrap.min.css") %>
-     <%:Styles.Render("~/Content/Site.css") %>
-     <%:Styles.Render("~/Content/ej/web/ej.widgets.core.material.min.css") %>
-     <%:Styles.Render("~/Content/ej/web/material/ej.theme.min.css") %>
-    <%: Scripts.Render("~/Scripts/jquery-3.3.1.min.js")%>
-    <%: Scripts.Render("~/Scripts/bootstrap.min.js")%>
-    <%: Scripts.Render("~/Scripts/jsrender.min.js")%>
-    <%: Scripts.Render("~/Scripts/ej/ej.web.all.min.js")%>
-    <%: Scripts.Render("~/Scripts/ej/ej.webform.min.js")%>
+    
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">

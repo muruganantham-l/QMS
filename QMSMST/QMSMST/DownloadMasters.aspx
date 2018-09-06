@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="Download Asset Register" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="DownloadMasters.aspx.cs" Inherits="DownloadMasters" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
-     <link href="Content/ej/web/material/ej.theme.min.css" rel="stylesheet" />
+     
     <table>
         <tr>
             <td></td>
             <td></td>
-            <td >
-
+            <td > 
+                 
                  <asp:Label ID="Label13" runat="server" Font-Bold="True" Font-Italic="False" Font-Names="Calibri" Font-Size="Large" Text="Download Asset Register" Width="265px" style="text-align: center"></asp:Label>               
             </td>
             <td>
@@ -34,16 +34,21 @@
                 <asp:Label runat="server" Width=100 ></asp:Label>
             </td>
             <td>
-                <asp:Button ID="search_btn" runat="server" OnClick="search_btn_Click" Text="Search"  />
+
+        
+                 
+                <%--<asp:Button ID="search_btn" runat="server" OnClick="search_btn_Click" Text="Search"  />--%>
+             
+                       <ej:Button ID="Button1" runat="server" Type="Button"   Text="Search" OnClick="search_btn_Click"></ej:Button>
             </td>
         </tr>
     </table>
     
-    
-    <ej:Grid ID="FlatGrid" showColumnChooser="true" PageSize ="5"  AllowFiltering="true" AllowGrouping="true" AllowResizing="true" AllowSelection="true" Selectiontype="Multiple" runat="server" enableColumnScrolling="true" AllowSorting="true" OnServerWordExporting="FlatGrid_ServerWordExporting" OnServerPdfExporting="FlatGrid_ServerPdfExporting" OnServerExcelExporting="FlatGrid_ServerExcelExporting" AllowPaging="true" AllowScrolling="True">
+      <div  id="target" >
+    <ej:Grid ID="FlatGrid"  showColumnChooser="true"  AllowFiltering="true" AllowGrouping="true" AllowResizing="true" AllowSelection="true" Selectiontype="Multiple" runat="server" enableColumnScrolling="true" AllowSorting="true" OnServerWordExporting="FlatGrid_ServerWordExporting" OnServerPdfExporting="FlatGrid_ServerPdfExporting" OnServerExcelExporting="FlatGrid_ServerExcelExporting" AllowPaging="true" AllowScrolling="True">
         <FilterSettings FilterType="Menu" ShowPredicate="true" />
         <ToolbarSettings ShowToolbar="true" ToolbarItems="excelExport,wordExport,pdfExport"></ToolbarSettings>
-        
+         <ClientSideEvents DataBound="dataBound"></ClientSideEvents>
         <Columns>
 
             <ej:Column Field="ast_mst_asset_no" HeaderText="BE Number" Width="150" TextAlign="Left" />
@@ -116,6 +121,8 @@
         </Columns>
 
     </ej:Grid>
+     </div>
+      <%--<ej:WaitingPopup ID="target" runat="server" Target="#targetelement" ShowOnInit="false"   Text="Loading... Please wait..."></ej:WaitingPopup>--%>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  >
         <Columns>
            <asp:BoundField   DataField="ast_mst_asset_no" HeaderText="BE Number"  />
@@ -187,7 +194,9 @@
         </Columns>   
     </asp:GridView>
 
+    
 
+</script>
 
 </asp:Content>
 

@@ -20,6 +20,9 @@ using System.Xml;
 using FastMember;
 using System.ComponentModel;
 
+using System.Web.Script.Services;
+using System.Web.Services;
+
 public partial class DownloadMasters : System.Web.UI.Page
 {
     List<Orders> order = new List<Orders>();
@@ -82,8 +85,9 @@ public partial class DownloadMasters : System.Web.UI.Page
     
 
 
-    private void BindDataSource1()
+    private List<Assets> BindDataSource1()
     {
+         
         DataTable dt =null;
         using (SqlConnection sqlcon = new SqlConnection(ConfigurationManager.ConnectionStrings["tomms_prodConnectionString"].ConnectionString))
         {
@@ -177,10 +181,11 @@ public partial class DownloadMasters : System.Web.UI.Page
 
 
                        }).ToList();
+        return AssetList;
+        //this.FlatGrid.DataSource = AssetList;
 
-        this.FlatGrid.DataSource = AssetList;
+        //this.FlatGrid.DataBind();
 
-        this.FlatGrid.DataBind();
     }
     [Serializable]
 
@@ -550,10 +555,14 @@ string ast_mst_asset_no
     }
 
 
+    
 
     protected void search_btn_Click(object sender, EventArgs e)
     {
         state_load(); 
-        BindDataSource1();
+        //BindDataSource1();
+        this.FlatGrid.DataSource = BindDataSource1(); ;// AssetList;
+
+        this.FlatGrid.DataBind();
     }
 }
