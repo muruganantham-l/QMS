@@ -48,8 +48,21 @@
            <td align="left"> <asp:Label ID="Label1" runat="server" Text="Submision Period :" Font-Names="Calibri"  Font-Bold="true" Width="150" Height="25"> </asp:Label></td>
         <td align="left"><asp:TextBox ID="submission_period" runat="server" BackColor="White" Width="195" TextMode="Date"></asp:TextBox></td>
         <td><asp:Label runat="server" Width="70"></asp:Label></td>
-        <td><asp:Button ID="print_btn" runat="server" Height="33px" Text="View Report" Width="134px"  OnClick="print_btn_Click"  /> </td>
+       
+         <td align="left"> <asp:Label ID="Label2" runat="server" Text="Clinic Category :" Font-Names="Calibri"  Font-Bold="true" Width="150" Height="25"> </asp:Label></td>
+        <td align="left"><asp:DropDownList ID="DropDownClinicCategory"   runat="server" Visible="true" Width="200" Height="25" BackColor="White" DataTextField="ClinicCategory" DataValueField="ClinicCategory" AutoPostBack="True" ></asp:DropDownList></td>
+        
     </tr>
+                 <tr>
+                     <td><asp:Label runat="server" Width="70"></asp:Label></td>
+                 </tr>
+                 <tr  >
+                     <td><asp:Label runat="server" Width="70"></asp:Label></td>
+                     <td><asp:Label runat="server" Width="70"></asp:Label></td>
+                     <td><asp:Label runat="server" Width="70"></asp:Label></td>
+                     <td><asp:Label runat="server" Width="40"></asp:Label></td>
+                      <td    ><asp:Button ID="print_btn" runat="server" Height="33px" Text="View Report" Width="134px"  OnClick="print_btn_Click"  /> </td>
+                 </tr>
 </table>
         </div>
           <asp:ScriptManager ID="ScriptManager1" runat="server">

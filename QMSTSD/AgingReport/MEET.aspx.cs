@@ -49,7 +49,12 @@ namespace AgingReport
                         DropDownState.DataBind();
                         DropDownState.Items.Insert(0, new ListItem("--Select--", "0"));
 
-                        MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
+                        DropDownClinicCategory.Items.Insert(0, new ListItem("KESIHATAN", "1"));
+                        DropDownClinicCategory.Items.Insert(0, new ListItem("PERGIGIAN", "2"));
+                        DropDownClinicCategory.Items.Insert(0, new ListItem("ALL", "0"));
+
+                       // MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://chs015-2-3/ReportServer");
+                       MyReportViewer.ServerReport.ReportServerUrl = new Uri("http://Localhost/ReportServer");
                         MyReportViewer.ServerReport.ReportPath = "/AdditionalEB EquipmentList FORMVAR2/MEET";
                         MyReportViewer.ServerReport.Refresh();
 
@@ -86,7 +91,7 @@ namespace AgingReport
 
 
                 MyReportViewer.ServerReport.ReportPath = "/AdditionalEB EquipmentList FORMVAR2/MEET";
-                ReportParameter[] reportParameterCollection = new ReportParameter[2];       //Array size describes the number of paramaters.
+                ReportParameter[] reportParameterCollection = new ReportParameter[3];       //Array size describes the number of paramaters.
 
                 reportParameterCollection[0] = new ReportParameter();
                 reportParameterCollection[0].Name = "state_name";                                            //Give Your Parameter Name
@@ -96,7 +101,10 @@ namespace AgingReport
                 reportParameterCollection[1].Name = "submission_period";                                            //Give Your Parameter Name
                 reportParameterCollection[1].Values.Add(submission_period.Text);               //Pass Parametrs's value here.
 
- 
+                reportParameterCollection[2] = new ReportParameter();
+                reportParameterCollection[2].Name = "clinic_category";                                            //Give Your Parameter Name
+                reportParameterCollection[2].Values.Add(DropDownClinicCategory.SelectedItem.Text);
+                
 
                 MyReportViewer.ServerReport.SetParameters(reportParameterCollection);
 

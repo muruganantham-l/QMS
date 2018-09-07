@@ -94,6 +94,24 @@ namespace AgingReport {
         protected global::System.Web.UI.WebControls.TextBox submission_period;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// DropDownClinicCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownClinicCategory;
+        
+        /// <summary>
         /// print_btn control.
         /// </summary>
         /// <remarks>
