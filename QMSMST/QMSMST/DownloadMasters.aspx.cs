@@ -35,8 +35,17 @@ public partial class DownloadMasters : System.Web.UI.Page
      
         if (!IsPostBack)
         {
-            state_load();
+            if (Session["name"] == null)
+            {
 
+                Session["prevUrl"] = Request.Url;
+                Response.Redirect("~/loginPage.aspx");
+
+            }
+            else
+            { 
+            state_load();
+            }
 
         }
 

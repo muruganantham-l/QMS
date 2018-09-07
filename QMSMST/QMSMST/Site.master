@@ -9,7 +9,7 @@
     <title><%: Page.Title %> -  Qms</title>
 
     <asp:PlaceHolder runat="server">
-     <ej:Menu ID="MenuControl" Width="70" runat="server" Orientation="Horizontal" >
+   <%--   <ej:Menu ID="MenuControl" Width="70" runat="server" Orientation="Horizontal" >
 
     <Items>
 
@@ -52,6 +52,8 @@
         
 
 </ej:Menu>
+ --%>
+
     </asp:PlaceHolder>
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -75,13 +77,56 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                   <%-- <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button>--%>
                    <%-- <a class="navbar-brand" runat="server" href="~/">Qms</a>--%>
-                     <a class="navbar-brand" runat="server" >Qms</a>
+                     <%--<a class="navbar-brand" runat="server" >Qms</a>--%>
+                   <ej:Menu    ID="Menu1"  Width="70" runat="server" Orientation="Horizontal" >
+
+    <Items>
+
+        <ej:MenuItem Id="Home"   ImageAttributes="loader.gif"  Text="Home">
+            
+           
+            <Items>
+
+                <ej:MenuItem Text="Download Masters">
+
+                    <Items>
+
+                        <ej:MenuItem Text="Asset Register" Url="~/DownloadMasters"></ej:MenuItem>
+
+                    </Items>
+
+                    <Items>
+
+                        <ej:MenuItem Text="Work Request"></ej:MenuItem>
+
+                    </Items>
+                      <Items>
+
+                        <ej:MenuItem Text="Work Order" Url="~/DownloadWorkOrder"></ej:MenuItem>
+
+                    </Items>
+
+                </ej:MenuItem>
+
+            </Items>
+
+
+
+        </ej:MenuItem>
+
+
+
+         </Items>
+
+        
+
+</ej:Menu> 
                 </div>
                 <div class="navbar-collapse collapse">
                  <%--   <ul class="nav navbar-nav">
@@ -94,7 +139,9 @@
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                <%-- <li><a runat="server" href="~/Account/Register">Register</a></li>--%>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <%--<li><a runat="server" href="~/Account/Login">Log in</a></li>--%>
+
+                                <li><a runat="server" href="~/Logout">Log Out</a></li>
                             </ul>
                         </AnonymousTemplate>  
                         <LoggedInTemplate>
