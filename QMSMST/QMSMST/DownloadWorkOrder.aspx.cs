@@ -37,7 +37,7 @@ public partial class DownloadWorkOrder : System.Web.UI.Page
             {
 
                 Session["prevUrl"] = Request.Url;
-                Response.Redirect("~/loginPage.aspx");
+                Response.Redirect("~/Login.aspx");
 
             }
             else

@@ -39,7 +39,7 @@ public partial class DownloadMasters : System.Web.UI.Page
             {
 
                 Session["prevUrl"] = Request.Url;
-                Response.Redirect("~/loginPage.aspx");
+                Response.Redirect("~/Login.aspx");
 
             }
             else

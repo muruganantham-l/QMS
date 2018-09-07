@@ -56,6 +56,6 @@ public partial class Logout : System.Web.UI.Page
         {
             Response.Write(ex.Message);
         }
-        Response.Redirect("~/Login1.aspx");
+        Response.Redirect("~/Login.aspx");
     }
 }
