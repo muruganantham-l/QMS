@@ -53,7 +53,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<%--<input class="input100" type="password" name="pass" placeholder="Password">--%>
-                        <asp:TextBox class="input100" ID="txtPWD" runat="server" autocomplete="off" TextMode="Password" placeholder="Password"/>
+                        <asp:TextBox class="input100" ID="txtPWD123" runat="server" autocomplete="off" TextMode="Password" placeholder="Password"/>
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 

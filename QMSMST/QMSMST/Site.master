@@ -103,7 +103,7 @@
 
                     <Items>
 
-                        <ej:MenuItem Text="Work Request"></ej:MenuItem>
+                        <ej:MenuItem Text="Work Request" Url="~/DownloadWorkRequest" ></ej:MenuItem>
 
                     </Items>
                       <Items>
