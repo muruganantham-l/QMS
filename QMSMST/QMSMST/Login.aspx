@@ -46,14 +46,14 @@
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
                         
-						<%--<input class="input100" type="text" id="txtUserName" name="username" placeholder="Username">--%>
-                        <asp:TextBox class="input100" placeholder="Username" id="txtUserName" runat="server"> </asp:TextBox>
+						<input runat="server" autocomplete="off" class="input100" type="text" id="username" name="username" placeholder="Username">
+                        <%--<asp:TextBox class="input100" placeholder="Username" id="txtUserName123" runat="server"> </asp:TextBox>--%>
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<%--<input class="input100" type="password" name="pass" placeholder="Password">--%>
-                        <asp:TextBox class="input100" ID="txtPWD123" runat="server" autocomplete="off" TextMode="Password" placeholder="Password"/>
+						<input autocomplete="off" class="input100" type="password"  id="pass"   name="pass" placeholder="Password">
+                        <%--<asp:TextBox class="input100" ID="txtPWD123" runat="server" autocomplete="off" TextMode="Password" placeholder="Password"/>--%>
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -89,7 +89,7 @@
 <!--===============================================================================================-->
 	<script src="Login_v3/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-	<script src=Login_v3/"vendor/bootstrap/js/popper.js"></script>
+	<script src="Login_v3/vendor/bootstrap/js/popper.js"></script>
 	<script src="Login_v3/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<script src="Login_v3/vendor/select2/select2.min.js"></script>

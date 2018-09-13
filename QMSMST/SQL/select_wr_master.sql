@@ -3,6 +3,8 @@ alter proc select_wr_master
 as
 begin
 set nocount on
+if @state  = 'all'
+select @state = null
 --8
 Select
 wkr_mst_wr_no					--	'WR Number', 
@@ -18,7 +20,7 @@ from wkr_mst (nolock),
 Wkr_det (nolock) 
 Where wkr_mst.site_cd = Wkr_det.site_cd
 and wkr_mst.rowid = Wkr_det.mst_rowid
-and wkr_mst_location = @state
+and ( wkr_mst_location = @state or @state is null)
 
 set nocount off
 end

@@ -44,7 +44,7 @@
         </tr>
     </table>
        <ej:Grid ID="FlatGrid"  showColumnChooser="true"  AllowFiltering="true" AllowGrouping="true" AllowResizing="true" AllowSelection="true" Selectiontype="Multiple" runat="server" enableColumnScrolling="true" AllowSorting="true" OnServerWordExporting="FlatGrid_ServerWordExporting" OnServerPdfExporting="FlatGrid_ServerPdfExporting" OnServerExcelExporting="FlatGrid_ServerExcelExporting" AllowPaging="true" AllowScrolling="True">
-        <FilterSettings FilterType="Menu" ShowPredicate="true" />
+        <FilterSettings FilterType="Excel" ShowPredicate="true" />
         <ToolbarSettings ShowToolbar="true" ToolbarItems="excelExport,wordExport,pdfExport"></ToolbarSettings>
          <ClientSideEvents DataBound="dataBound"></ClientSideEvents>
         <Columns>

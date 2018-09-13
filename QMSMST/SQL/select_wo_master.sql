@@ -1,8 +1,10 @@
- CREATE proc select_wo_master
+ alter proc select_wo_master
 @state varchar(300) = null
 as
 begin 
 set nocount on
+if @state = 'all'
+select @state = null
 
 select 
 wko_mst_wo_no						--			'WO Number',
@@ -71,7 +73,7 @@ where wko_mst.rowid = wko_det.mst_RowID
  --and wko_mst_wo_no = 'CWO100002'
 --and left(wko_mst_wo_no,3) = 'PWO'
 --and year(wko_mst_org_date)
-and wko_mst_asset_level = @state
+and (wko_mst_asset_level = @state or @state is null)
 --and wko_mst_chg_costcenter like 'WKL%'
 --and wko_mst_assetno like 'WK%'
 --and wko_mst_status = 'OPE'
